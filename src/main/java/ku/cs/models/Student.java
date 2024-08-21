@@ -11,6 +11,7 @@ public class Student {
         score = 0;
     }
 
+    //overloading constructor
     public Student(String id, String name, double score) {
         this.id = id;
         this.name = name;
@@ -29,9 +30,20 @@ public class Student {
         }
     }
 
+    //String is not primitive but act as one. does not need initialisation. can be compared
     public String grade()
     {
-        return "F";
+        String grade = "F";
+        if (score >= 80){
+            grade = "A";
+        } else if (score >= 70) {
+            grade = "B";
+        }else if (score >= 60) {
+            grade = "C";
+        }else if (score >= 50){
+            grade = "D";
+        }
+        return grade;
     }
 
     public boolean isId(String id) {
